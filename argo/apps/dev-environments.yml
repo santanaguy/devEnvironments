@@ -1,7 +1,7 @@
 project: default
 source:
   repoURL: 'https://github.com/santanaguy/devEnvironments.git'
-  path: argo
+  path: argo/dev-environments
   targetRevision: HEAD
 destination:
   server: 'https://kubernetes.default.svc'
