@@ -15,8 +15,8 @@ spec:
     repoURL: https://github.com/santanaguy/devEnvironments.git
     targetRevision: HEAD
   syncPolicy:
-  automated:
-    prune: true
-    selfHeal: true
-  syncOptions:
-    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
