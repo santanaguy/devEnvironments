@@ -1,0 +1,14 @@
+project: default
+source:
+  repoURL: 'https://github.com/santanaguy/devEnvironments.git'
+  path: argo
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: devEnvironments
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
+  syncOptions:
+    - CreateNamespace=true
