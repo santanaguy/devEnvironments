@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   name: dev-environments
   labels:
-    app: api1
+    app: api2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: api1
+      app: api2
   template:
     metadata:
       labels:
-        app: nginx
+        app: api2
     spec:
       containers:
-      - name: nginx
-        image: devenvironments_api1
+      - name: api2
+        image: devenvironments_api2
         ports:
         - containerPort: 80
         imagePullPolicy: IfNotPresent
