@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-environments
+  labels:
+    app: api1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api1
+  template:
+    metadata:
+      labels:
+        app: api1
+    spec:
+      containers:
+      - name: api1
+        image: devenvironments_api1
+        ports:
+        - containerPort: 80
+        imagePullPolicy: IfNotPresent
