@@ -4,7 +4,6 @@ metadata:
   name: api1
   namespace: dev-environments
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: dev-environments
