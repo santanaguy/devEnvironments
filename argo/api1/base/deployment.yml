@@ -19,4 +19,7 @@ spec:
         image: devenvironments_api1
         ports:
         - containerPort: 80
+        env:
+        - name: API_URL
+          value: http://api2:80
         imagePullPolicy: IfNotPresent

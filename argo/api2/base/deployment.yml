@@ -20,3 +20,15 @@ spec:
         ports:
         - containerPort: 80
         imagePullPolicy: IfNotPresent
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api2
+spec:
+  selector:
+    app.kubernetes.io/name: api2
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
