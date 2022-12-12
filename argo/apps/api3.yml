@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: api3
-  namespace: dev-environments
+  namespace: argocd
   finalizers:
 spec:
   destination:
