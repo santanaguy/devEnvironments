@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: api1-applicationset
+spec:
+  generators:
+  - list:
+      elements:
+      - namespace: dev-environment1
+      - namespace: dev-environment2
+  template:
+    metadata:
+      name: '{{namespace}}-api1'
+    spec:
+      source:
+        repoURL: https://github.com/santanaguy/devEnvironments.git
+        targetRevision: HEAD
+        path: argo/api/base1
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: {{namespace}}
