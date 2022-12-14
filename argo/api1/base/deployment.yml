@@ -20,7 +20,7 @@ spec:
         ports:
         - containerPort: 80
         env:
-        - name: API_URL
+        - name: API__URL
           value: http://api2:80
         imagePullPolicy: IfNotPresent
 ---
