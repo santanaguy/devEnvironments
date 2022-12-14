@@ -23,3 +23,15 @@ spec:
         - name: API_URL
           value: http://api2:80
         imagePullPolicy: IfNotPresent
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api1
+spec:
+  selector:
+    app.kubernetes.io/name: api1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
