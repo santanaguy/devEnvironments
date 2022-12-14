@@ -27,6 +27,8 @@ metadata:
   name: api2
 spec:
   type: ClusterIP # Optional field (default)
+  selector: 
+    app: api2
   ports:
   - name: http
     protocol: TCP
