@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: api3
+  name: shpod
   namespace: argocd
   finalizers:
 spec:
@@ -10,7 +10,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: default
   source:
-    path: argo/api3/base
+    path: argo/shpod/base
     repoURL: https://github.com/santanaguy/devEnvironments.git
     targetRevision: HEAD
   syncPolicy:
