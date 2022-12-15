@@ -13,10 +13,17 @@ spec:
     metadata:
       name: '{{namespace}}-api1'
     spec:
+      project: default
       source:
         repoURL: https://github.com/santanaguy/devEnvironments.git
         targetRevision: HEAD
         path: argo/api/base1
       destination:
-        server: 'https://kubernetes.default.svc'
         namespace: {{namespace}}
+        server: 'https://kubernetes.default.svc'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
