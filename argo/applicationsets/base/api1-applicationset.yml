@@ -19,7 +19,7 @@ spec:
         targetRevision: HEAD
         path: argo/api1/base
       destination:
-        namespace: {{namespace}}
+        namespace: '{{namespace}}'
         server: 'https://kubernetes.default.svc'
       syncPolicy:
         automated:
