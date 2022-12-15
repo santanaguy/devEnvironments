@@ -10,10 +10,10 @@ spec:
       - cluster: engineering-prod
       - cluster: finance-preprod
   template:
-    project: default
     metadata:
       name: '{{cluster}}-guestbook'
     spec:
+      project: default
       source:
         repoURL: https://github.com/infra-team/cluster-deployments.git
         targetRevision: HEAD
