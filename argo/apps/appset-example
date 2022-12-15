@@ -1,31 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
-kind: ApplicationSet
+kind: Application
 metadata:
-  name: bgd
-  namespace: openshift-gitops
+  name: appset
+  namespace: argocd
+  finalizers:
 spec:
-  generators:
-  - list:
-      elements:
-      - cluster: cluster1
-        url: https://api.cluster1.chx.osecloud.com:6443
-     - cluster: cluster2
-        url: https://api.cluster2.chx.osecloud.com:6443
-      - cluster: cluster3
-        url: https://api.cluster3.chx.osecloud.com:6443
-  template:
-    metadata:
-      name: '{{cluster}}-bgd'
-    spec:
-      project: default
-      syncPolicy:
-        automated:
-          prune: true
-          selfHeal: true
-      source:
-        repoURL: https://github.com/christianh814/gitops-examples
-        targetRevision: master
-        path: applicationsets/list-generator/overlays/{{cluster}}
-      destination:
-        server: '{{url}}'
-        namespace: bgd
+  destination:
+    namespace: argocd
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    path: applicationsets/ap1-applicationset
+    repoURL: https://github.com/santanaguy/devEnvironments.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
