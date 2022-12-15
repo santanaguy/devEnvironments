@@ -10,6 +10,7 @@ spec:
       - cluster: engineering-prod
       - cluster: finance-preprod
   template:
+    project: default
     metadata:
       name: '{{cluster}}-guestbook'
     spec:
