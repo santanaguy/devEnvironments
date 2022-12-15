@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: guestbook
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: engineering-dev
+      - cluster: engineering-prod
+      - cluster: finance-preprod
+  template:
+    metadata:
+      name: '{{cluster}}-guestbook'
+    spec:
+      source:
+        repoURL: https://github.com/infra-team/cluster-deployments.git
+        targetRevision: HEAD
+        path: guestbook/{{cluster}}
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: guestbook
