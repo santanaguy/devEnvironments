@@ -10,7 +10,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: default
   source:
-    path: applicationsets/ap1-applicationset
+    path: argo/applicationsets/ap1-applicationset
     repoURL: https://github.com/santanaguy/devEnvironments.git
     targetRevision: HEAD
   syncPolicy:
