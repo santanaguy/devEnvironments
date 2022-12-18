@@ -7,8 +7,8 @@ spec:
   generators:
   - list:
       elements:
-      - namespace: dev-environment1
-      - namespace: dev-environment2
+      - namespace: mc
+      - namespace: as
   template:
     metadata:
       name: '{{namespace}}-api2'
