@@ -22,6 +22,8 @@ spec:
         env:
         - name: API__URL
           value: http://api2
+        - name: test
+          value: test
         imagePullPolicy: IfNotPresent
 ---
 apiVersion: v1
