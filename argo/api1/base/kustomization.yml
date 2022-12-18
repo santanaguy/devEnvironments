@@ -12,3 +12,15 @@ resources:
 images:
 - name: devenvironments_api1
   newTag: "latest"
+
+replacements:
+  - source:
+      kind: Deployment
+      name: api1
+      fieldPath: metadata.annotations.app-prefix
+    targets:
+      - select:
+          kind: Deployment
+          name: api1
+        fieldPaths:
+          - spec.template.spec.containers.0.env.[name=test].value

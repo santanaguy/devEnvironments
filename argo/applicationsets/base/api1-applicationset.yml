@@ -18,6 +18,9 @@ spec:
         repoURL: https://github.com/santanaguy/devEnvironments.git
         targetRevision: HEAD
         path: argo/api1/base
+        kustomize:
+          commonAnnotations:
+            app-prefix: '{{namespace}}'
       destination:
         namespace: '{{namespace}}'
         server: 'https://kubernetes.default.svc'
