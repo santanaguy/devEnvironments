@@ -26,7 +26,7 @@ namespace API.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public async Task<IActionResult> Get()
         {
-            return Ok();
+            return Ok(await (await this.config.Url.AppendPathSegment("weatherForecast").GetAsync()).GetJsonAsync<List<WeatherForecast>>());
         }
     }
 }
